@@ -10,15 +10,15 @@ beforeAll(
   async () => {
     // connect and create table
     await sequelize.sync();
-  }
-)
+  },
+);
 
 afterAll(
   async () => {
     // remove all things in table
     await sequelize.drop();
-  }
-)
+  },
+);
 
 
 
@@ -44,7 +44,7 @@ describe('Testing the express server', () => {
 
   test('Create a movie using POST', async () => {
     const response = await request.post('/movies').send({
-      title: "s",
+      title: 's',
       year: 546,
       runtime: 654,
     });
@@ -93,7 +93,7 @@ describe('Testing the express server', () => {
   test('Update a boxoffice using PUT', async () => {
     const response = await request.put('/boxoffice/1');
     expect(response.status).toEqual(200);
-    expect(response.body).toEqual({ "id": "1" });
+    expect(response.body).toEqual({ 'id': '1' });
   });
 
   test('Destroy a movie using DELETE', async () => {
